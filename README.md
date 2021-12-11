@@ -24,6 +24,10 @@ tasklist for windows?
 [netscan] shows network connections that were active at the time - eg listening, closed, establish.  ports, addresses, processes that owned the connections
 [grep -vi closed] will filter out any lines containing the word "closed" so we'll ignore them
 
+`./volatility -f dump.raw --profile=Win7SP1x64 sockets`
+
+detect any sockets listening on TCP/UDP/RAW.  
+
 `./volatility  -f dump.raw --profile=Win7SP1x64 psxview`
 
 [psxview] will help us find processes that have been sneaky.  it will compare output of some (volatility) commands to see whether something has been listed or not.
