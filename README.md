@@ -1,3 +1,4 @@
+#CLI #cheatsheet #malwareanalysis 
 # Installation
 go to the volatility website and get the linux executables, download, unzip
 run using `./volatility`
@@ -17,7 +18,7 @@ convention:  name the dump file to match the profile for later
 [--profile=Win7SP1x64] this sets the profile to Win 7 service pack 1, 64bit
 [pslist] will show us the list of processes that were in memory (address, PID, times etc)
 
-tasklist for windows?
+[tasklist] for windows?
 
 `./volatility  -f dump.raw --profile=Win7SP1x64 netscan | grep -vi closed`
 
@@ -27,6 +28,11 @@ tasklist for windows?
 `./volatility -f dump.raw --profile=Win7SP1x64 sockets`
 
 detect any sockets listening on TCP/UDP/RAW.  
+
+`./volatility  -f dump.raw --profile=Win7SP1x64 connections`
+`./volatility  -f dump.raw --profile=Win7SP1x64 connscan`
+list open connections at the time of the memory dump (connections)
+or attempt to find traces of connections that had been closed (connscan)
 
 `./volatility  -f dump.raw --profile=Win7SP1x64 psxview`
 
@@ -90,3 +96,5 @@ memdump just straight up dumps the memory of the process into a file for analysi
 
 modscan will show drivers or kernel modules (linux) that are unloaded or hidden/unlinked by rootkits.  helpful to find stuff
 can help you find processes that don't have a physical file mapped on disk - indicative of malware that exists only in memory
+
+#CLI #cheatsheet
