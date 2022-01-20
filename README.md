@@ -97,4 +97,8 @@ memdump just straight up dumps the memory of the process into a file for analysi
 modscan will show drivers or kernel modules (linux) that are unloaded or hidden/unlinked by rootkits.  helpful to find stuff
 can help you find processes that don't have a physical file mapped on disk - indicative of malware that exists only in memory
 
+## Update:  winesap
+
+this is a plugin that can be used to look for Autostart Extensibility Points (AESP) - which are executables that get executed automatically and silently when an application is terminated.  this is done by modifying registry keys.
+
 #CLI #cheatsheet
